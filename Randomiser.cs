@@ -11,12 +11,13 @@ namespace Coursework
         public static string[] Names = {"Printer", "Laptop", "Personal Computer(PC)", "Mobile Phone","IP Camera",
             "Router","Tablet","Power Bank","MP3 Player","Music centre"};
         public static string[] Models = { "Samsung","LG","ACER","DELL","Sony","Lenovo" };
+        public static string[] Descriptions = { "Red", "Blue", "Pink","Yellow","Brown","Violet",
+                "Orange","White","Gold","Silver","Bronze"};
         //public string Descriptions;
  
         public static decimal PriceUAHs = new decimal();
-        const decimal DOLLAR = 28.66M;
+        public static decimal DOLLAR = 28.66M;
         const int randomID = 10000;
-        public static int AmountInStocks;
         private static int RandomTemp;
         static Random myRandom = new Random(); 
 
@@ -35,13 +36,12 @@ namespace Coursework
            PriceUAHs = myRandom.Next(100, 1000);           
             return PriceUAHs;
         }
-        public static decimal GetPriceUSD()
+        public static decimal GetPriceUSD() => Math.Round(PriceUAHs / DOLLAR, 2);
+        public static int GetRandomID() => myRandom.Next(randomID);
+        public static string GetRandomDescription()
         {
-            return Math.Round(PriceUAHs / DOLLAR, 2);
-        }
-        public static int GetRandomID()
-        {          
-            return  myRandom.Next(randomID);
+            RandomTemp = myRandom.Next(Descriptions.Length - 1);
+            return Descriptions[RandomTemp];
         }
 
 

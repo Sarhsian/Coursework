@@ -13,10 +13,20 @@ namespace Coursework
             //ComputerTechnic computerTechnic = new ComputerTechnic();
             //Console.WriteLine(computerTechnic.ToString());
             Storage myStorage = new Storage();
-            myStorage.SetRandomBase(30);
-            myStorage.PrintBase();
-            Console.WriteLine( myStorage.GetAmountInStorage("Printer"));
+            myStorage.SetRandomStorage(30);
+            myStorage.PrintStorage();
 
+            //Console.WriteLine( myStorage.GetAmountInStorage("Printer"));
+           myStorage.AddComputerTechnic();
+            //myStorage.SortByPrice();
+            myStorage.PrintStorage();
+            List<ComputerTechnic> computerTechnics = new List<ComputerTechnic>();
+            Console.WriteLine();
+            computerTechnics = myStorage.FindTechnicDescriptionByNameAndModel("123", "123");
+            foreach (var item in computerTechnics)
+            {
+                Console.WriteLine($"DEscription {item.Description}");
+            }
         }
     }
 }
