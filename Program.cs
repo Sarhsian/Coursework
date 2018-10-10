@@ -10,6 +10,13 @@ namespace Coursework
     {
         static void Main(string[] args)
         {
+            //ComputerTechnic computerTechnic = new ComputerTechnic();
+            //Console.WriteLine(computerTechnic.ToString());
+            Storage myStorage = new Storage();
+            myStorage.SetRandomBase(30);
+            myStorage.PrintBase();
+            Console.WriteLine( myStorage.GetAmountInStorage("Printer"));
+
         }
     }
 }
